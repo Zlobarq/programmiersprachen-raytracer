@@ -18,7 +18,7 @@
 
 class Pixel
 {
-public : // c'tor
+public: // c'tor
 
   Pixel(unsigned int = 0, unsigned int = 0);
   void print(std::ostream&) const;
