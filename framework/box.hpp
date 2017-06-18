@@ -6,7 +6,7 @@
 #include <string>
 class Box: public Shape
 {
-private:
+protected:
   glm::vec3 m_min;
   glm::vec3 m_max;
   glm::vec3 seiten=m_max-m_min;
@@ -15,21 +15,9 @@ private:
   double z=seiten.z;
 public:
 	Box ();
-	//paralelepiped
-	double area() const override{
-	return x*y*2+x*z*2+z*y*2;
-	}
-	//paralelepiped
-	double volume() const override{
-	return x*y*z;
-	}
-	glm::vec3 get_min()
-	{
-		return m_min;
-	}
-	glm::vec3 get_max()
-	{
-		return m_max;
-	}	
+	double area() const override;
+	double volume() const override;
+	glm::vec3 const& get_min() const;
+	glm::vec3 const& get_max() const;
 };
 #endif

@@ -11,14 +11,12 @@ private:
   double m_radius;
 public:
 	Sphere ();
-	double area() const override{
-	return 12.56*m_radius*m_radius;
-	}
-	double volume() const override{
-	return m_radius*m_radius*m_radius*4.186;
-	}
-	float get_radius() {return m_radius;}
-	glm::vec3 get_center() {return m_center;}
+	double area() const override;
+	
+	double volume() const override;
+	
+	float const& get_radius() const; 
+	glm::vec3 const& get_center() const; 
 };
 
 

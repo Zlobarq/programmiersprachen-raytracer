@@ -12,6 +12,7 @@ public:
   Shape();//default
   Shape(std::string const& name, Color const& color);//User 
   ~Shape();//Destructor
+  //virtual methoden
   virtual double area() const = 0;
   virtual double volume() const = 0;
 protected:
