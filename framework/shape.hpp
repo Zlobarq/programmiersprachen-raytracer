@@ -3,17 +3,20 @@
 #define BUW_SHAPE_HPP
 #include <string>
 #include "color.hpp"
+#include <glm/vec3.hpp>
 class Shape
 {
+
+public:
+	//Constructors
+  Shape();//default
+  Shape(std::string const& name, Color const& color);//User 
+  ~Shape();//Destructor
+  virtual double area() const = 0;
+  virtual double volume() const = 0;
 protected:
 std::string m_name;
 Color m_color;
-public:
-  Shape ();
-  Shape(std::string name,Color const& color) : m_name {"Default Shape"}, m_color {Color(0, 0, 0)} {}
-  virtual double area() const = 0;
-  virtual double volume() const = 0;
-
 };
 
 
