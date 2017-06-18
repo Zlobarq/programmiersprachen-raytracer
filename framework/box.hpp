@@ -14,7 +14,10 @@ protected:
   double y=seiten.y;
   double z=seiten.z;
 public:
-	Box ();
+	Box (); // default constructor
+	Box(std::string const& name,Color const& color,glm::vec3 const& min,glm::vec3 const& max); //user
+	~Box(); //destructor
+	
 	double area() const override;
 	double volume() const override;
 	glm::vec3 const& get_min() const;

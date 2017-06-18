@@ -6,11 +6,13 @@
 #include <string>
 class Sphere: public Shape
 {
-private:
+protected:
   glm::vec3 m_center;
   double m_radius;
 public:
-	Sphere ();
+	Sphere (); // default constructor
+	Sphere(std::string const& name, Color const& color,glm::vec3 const& center,double const& radius); //user
+	~Sphere();//destructor
 	double area() const override;
 	
 	double volume() const override;
