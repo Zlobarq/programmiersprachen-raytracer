@@ -41,7 +41,7 @@ std::ostream & Sphere::print(std::ostream & os) const{
 
 Shape::print(os);
 
-os<<"center:"<<m_center.x<<" "<<m_center.y<<" "<<m_center.z<<"\n"
+os<<"Sphere: \n"<<"center:"<<m_center.x<<" "<<m_center.y<<" "<<m_center.z<<"\n"
 <<"radius:"<<m_radius<<"\n";
 
 }

@@ -76,7 +76,13 @@ Sphere sphere ("mysphere", Color{1.0,3.0,5.0},glm::vec3{3.0,3.0,3.0},5);
 REQUIRE(sphere.area() == 314.0);
 REQUIRE(sphere.volume() == Approx(523.25));
 }
-
+TEST_CASE("print figures", "[print]")
+{
+  Box box;
+  Sphere sphere;
+  box.print(std::cout);
+  sphere.print(std::cout);
+}
 
 int main(int argc, char *argv[])
 {
