@@ -23,7 +23,7 @@ glm::vec3 const& Box::get_max() const
 
 double Box::area() const
 {
-	return x*y*2+x*z*2+z*y*2;
+	return (x*y+x*z+z*y)*2;
 }
 double Box::volume() const
 {
