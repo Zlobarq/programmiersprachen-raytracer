@@ -38,3 +38,11 @@ double Sphere::volume() const
 {
 		return m_radius*m_radius*m_radius*4.186;
 }
+std::ostream & Sphere::print(std::ostream & os) const{
+
+Shape::print(os);
+
+os<<"center:"<<m_center.x<<" "<<m_center.y<<" "<<m_center.z<<"\n"
+<<"radius:"<<m_radius<<"\n";
+
+}

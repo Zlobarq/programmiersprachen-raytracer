@@ -20,6 +20,8 @@ public:
 	
 	double area() const override;
 	double volume() const override;
+	std::ostream & print (std::ostream & os) const override;
+
 	glm::vec3 const& get_min() const;
 	glm::vec3 const& get_max() const;
 };
