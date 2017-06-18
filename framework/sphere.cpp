@@ -1,15 +1,14 @@
 #include "sphere.hpp"
 #include <string>
-Sphere::Sphere() : Shape(),m_center{0,0,0},m_radius{1.0}  // default constructor
+Sphere::Sphere() : Shape{},m_center{0,0,0},m_radius{1.0}  // default constructor
 {}
-
 Sphere::Sphere(std::string const& name, Color const& color,glm::vec3 const& center,double const& radius)://user constructor
-Shape(name,color),
+Shape{name,color},
 m_center{center},
 m_radius{radius}
 {}
 
-Sphere::~Sphere()//destrictor
+Sphere::~Sphere()//destructor
 {};
 
 
@@ -22,7 +21,7 @@ glm::vec3 const& Sphere::get_center() const{
 	return m_center;
 }
 
-float const& Sphere::get_radius() const{
+double const& Sphere::get_radius() const{
 
 	return m_radius;
 }

@@ -1,9 +1,9 @@
 #include "box.hpp"
 #include <string>
-Box::Box() : Shape(), m_min{0,0,0},m_max{1,1,1} // default constructor
+Box::Box() : Shape{}, m_min{0,0,0},m_max{1,1,1} // default constructor
 {}
 Box::Box(std::string const& name,Color const& color,glm::vec3 const& min,glm::vec3 const& max)://user constructor
-Shape(name,color),
+Shape{name,color},
 m_min{min},
 m_max{max}
 {}
