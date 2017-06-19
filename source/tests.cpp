@@ -84,6 +84,53 @@ TEST_CASE("print figures", "[print]")
   sphere.print(std::cout);
 }
 
+TEST_CASE("5.7,[staticdynamic]")
+{
+
+std::cout<< "5.7\n";
+std::cout<< "Static type checking means that type checking occurs at compile time."<< 
+"\n No type information is used at runtime in that case.\n ";
+
+std::cout<< "\n Dynamic type checking occurs when type information is used at runtime."<<
+"\n C++ uses a mechanism called RTTI (runtime type information) to implement this.";
+std::cout<< "\n source: https://stackoverflow.com/questions/1347691/static-vs-dynamic-type-checking-in-c\n ";
+
+Color red (255 , 0 , 0);
+glm::vec3 position (0,0,0);
+std::shared_ptr<Sphere> s1 =
+std::make_shared<Sphere>("sphere0",red,position,1.2);
+std::shared_ptr<Shape> s2 =
+std::make_shared<Sphere>("sphere1",red,position,1.2);
+s1->print(std::cout);
+s2->print(std::cout);
+}
+
+
+
+
+
+
+
+TEST_CASE("Destructor virtual/nicht virtual", "[destructor]")
+{
+// NON-VIRTUAL
+// ../source/tests.cpp:98:10: NON-VIRTUAL warning: deleting object of polymorphic class 
+//type ‘Sphere’ which has non-virtual destructor might cause undefined behavior 
+  std::cout<< "5.8\n";
+  Color red(250, 0, 0);
+  glm::vec3 position(0,0,0);
+
+  Sphere* s1 = new Sphere("sphere0", red,position, 1.2);
+  Shape* s2 = new Sphere("sphere1", red,position, 1.2);
+
+  s1->print(std::cout);
+  s2->print(std::cout);
+
+  delete s1;
+  delete s2;
+std::cout<< "\nNON-VIRTUAL\n../source/tests.cpp:98:10: NON-VIRTUAL warning:\ndeleting object of polymorphic class:\ntype ‘Sphere’ which has non-virtual destructor might cause undefined behavior\n";
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

@@ -34,7 +34,7 @@ std::ostream & Box::print(std::ostream & os) const{
 
 Shape::print(os);
 
-os<<"Box: \n"<<"min coordinates:"<<m_min.x<<" "<<m_min.y<<" "<<m_min.z<<"\n"
+return os<<"Box: \n"<<"min coordinates:"<<m_min.x<<" "<<m_min.y<<" "<<m_min.z<<"\n"
 <<"max coordinates:"<<m_max.x<<" "<<m_max.y<<" "<<m_max.z<<"\n";
 
 }
