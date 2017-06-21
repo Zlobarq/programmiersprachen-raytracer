@@ -82,6 +82,7 @@ TEST_CASE("print figures", "[print]")
   Sphere sphere;
   box.print(std::cout);
   sphere.print(std::cout);
+  std::cout<<"print figures box"<<box<<"\n";
 }
 
 TEST_CASE("5.7,[staticdynamic]")

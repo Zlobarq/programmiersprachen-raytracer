@@ -6,7 +6,7 @@
 #include <string>
 class Box: public Shape
 {
-protected:
+private:
   glm::vec3 m_min;
   glm::vec3 m_max;
   glm::vec3 seiten=m_max-m_min;

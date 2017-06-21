@@ -16,10 +16,10 @@ public:
   //virtual methoden
   virtual double area() const = 0;
   virtual double volume() const = 0;
-  virtual std::string get_name() const; 
-  virtual Color get_color() const;
+  std::string get_name() const; 
+  Color get_color() const;
   virtual std::ostream & print (std::ostream & os) const;
-protected:
+private:
 std::string m_name;
 Color m_color;
 };
