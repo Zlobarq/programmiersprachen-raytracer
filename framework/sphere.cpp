@@ -43,5 +43,13 @@ Shape::print(os);
 
 return os<<"Sphere: \n"<<"center:"<<m_center.x<<" "<<m_center.y<<" "<<m_center.z<<"\n"
 <<"radius:"<<m_radius<<"\n";
+}
 
+bool Sphere::intersect(Ray const& ray, float& distance)
+{
+    
+   auto norm_direction = glm::normalize(ray.direction);
+    auto result = glm::intersectRaySphere(ray.origin, norm_direction, m_center, m_radius * m_radius, distance);
+    return result;
+    
 }
