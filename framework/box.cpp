@@ -38,7 +38,7 @@ return os<<"Box: \n"<<"min coordinates:"<<m_min.x<<" "<<m_min.y<<" "<<m_min.z<<"
 <<"max coordinates:"<<m_max.x<<" "<<m_max.y<<" "<<m_max.z<<"\n";
 
 }
-
+//https://people.csail.mit.edu/amy/papers/box-jgt.pdf
 bool Box::intersect(Ray const& ray ,float& t)
 {
 

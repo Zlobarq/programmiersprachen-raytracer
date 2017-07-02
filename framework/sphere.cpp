@@ -1,7 +1,8 @@
 #include "sphere.hpp"
 #include <string>
 Sphere::Sphere() : Shape{},m_center{0,0,0},m_radius{1.0}  // default constructor
-{std::cout<< "sphere default constructor\n";}
+{//std::cout<< "sphere default constructor\n";
+}
 
 
 
@@ -9,7 +10,8 @@ Sphere::Sphere(std::string const& name, Material const& material,glm::vec3 const
 Shape{name,material},
 m_center{center},
 m_radius{radius}
-{std::cout<< "sphere user constructor\n";}
+{//std::cout<< "sphere user constructor\n";
+}
 
 
 
@@ -17,7 +19,8 @@ m_radius{radius}
 
 
 Sphere::~Sphere()//destructor
-{std::cout<< "sphere destrcutor\n";};
+{//std::cout<< "sphere destrcutor\n";
+};
 
 
 
@@ -49,7 +52,7 @@ std::ostream & Sphere::print(std::ostream & os) const{
 
 Shape::print(os);
 
-return os<<"Sphere: \n"<<"center:"<<m_center.x<<" "<<m_center.y<<" "<<m_center.z<<"\n"
+return os<<"\n"<<"Sphere: \n"<<"center:"<<m_center.x<<" "<<m_center.y<<" "<<m_center.z<<"\n"
 <<"radius:"<<m_radius<<"\n";
 }
 

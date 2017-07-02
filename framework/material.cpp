@@ -1,7 +1,7 @@
 #include "material.hpp"
 
 Material::Material():
-    m_name{"nomat"},
+    m_name{"no_mat"},
     m_ka{Color{0, 0, 0}},
     m_kd{Color{0, 0, 0}},
     m_ks{Color{0, 0, 0}},
@@ -16,7 +16,7 @@ Material::Material(std::string const& name, Color const& ka, Color const& kd, Co
     m_m{m}{}
 
 std::ostream& operator<<(std::ostream& ost, Material const& m){
-    ost << "Name:" << m.m_name << "\n ka:" << m.m_ka << "\n kd:" << m.m_kd << "\n ks:" << m.m_ks
+    ost <<"\n"<< "Name:" << m.m_name << "\n ka:" << m.m_ka << "\n kd:" << m.m_kd << "\n ks:" << m.m_ks
        << "\n m:" << m.m_m << "\n";
 
     return ost;
