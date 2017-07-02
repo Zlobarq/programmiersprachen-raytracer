@@ -1,9 +1,10 @@
 #define CATCH_CONFIG_RUNNER
 #include <catch.hpp>
 #include <ostream>
-#include "box.cpp"
-#include "sphere.cpp"
-#include "shape.cpp"
+#include "box.hpp"
+#include "sphere.hpp"
+#include "shape.hpp"
+#include "material.hpp"
 #include <string>
 
 //Material testmat(std::string {"testmaterial"}, Color{0.0,0.0,0.0}, Color{1.0,1.0,1.0}, Color{0.5,0.5,0.5}, 0.5);

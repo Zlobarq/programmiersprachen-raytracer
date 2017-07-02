@@ -19,7 +19,7 @@ public:
   //Virtual Methods
   virtual double area() const = 0;
   virtual double volume() const = 0;
-  virtual std::ostream & print (std::ostream & os) const;
+  virtual std::ostream & print (std::ostream & os) const=0;
   virtual bool intersect(Ray const& ray ,float& t) = 0;
   //Const Attributes
   std::string get_name() const; 
