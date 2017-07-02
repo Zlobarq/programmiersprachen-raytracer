@@ -13,7 +13,7 @@ protected:
 public:
 	//Constructors
 	Sphere(); // default constructor
-	Sphere(std::string const& name, Color const& color,glm::vec3 const& center,double const& radius); //user
+	Sphere(std::string const& name, Material const& material,glm::vec3 const& center,double const& radius); //user
 	~Sphere();//destructor
 	//Function Overrides
 	double area() const override;

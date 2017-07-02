@@ -2,11 +2,19 @@
 #include <string>
 Sphere::Sphere() : Shape{},m_center{0,0,0},m_radius{1.0}  // default constructor
 {std::cout<< "sphere default constructor\n";}
-Sphere::Sphere(std::string const& name, Color const& color,glm::vec3 const& center,double const& radius)://user constructor
-Shape{name,color},
+
+
+
+Sphere::Sphere(std::string const& name, Material const& material,glm::vec3 const& center,double const& radius)://user constructor
+Shape{name,material},
 m_center{center},
 m_radius{radius}
 {std::cout<< "sphere user constructor\n";}
+
+
+
+
+
 
 Sphere::~Sphere()//destructor
 {std::cout<< "sphere destrcutor\n";};

@@ -17,7 +17,7 @@ private:
 public:
 	//Constructors
 	Box (); // default constructor
-	Box(std::string const& name,Color const& color,glm::vec3 const& min,glm::vec3 const& max); //user
+	Box(std::string const& name,Material const& material,glm::vec3 const& min,glm::vec3 const& max); //user
 	~Box(); //destructor
 	
 	//Function overrides
