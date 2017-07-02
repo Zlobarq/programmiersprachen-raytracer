@@ -152,6 +152,39 @@ TEST_CASE("print figures", "[print]")
 //s2->print((std::cout);
 //}
 
+TEST_CASE("intersectRaySphere", "[intersect]")
+{
+  
+	glm::vec3 ray_origin{0.0, 0.0, 0.0};
+	glm::vec3 ray_direction{0.0, 0.0, 1};
+	Ray ray {ray_origin,ray_direction};
+	Sphere sphere ("mysphere", testmat,glm::vec3{0.0,0.0,15.0},3.0);
+
+	float distance=0.0;
+
+	bool result=sphere.intersect(ray,distance);
+
+	REQUIRE(result == true);
+}
+TEST_CASE("intersectRayBox", "[intersect]")
+{
+	Box box ("mybox",testmat,glm::vec3{0,0,0.5},glm::vec3{0.0,0.0,3.0});
+
+	glm::vec3 ray_origin{0.0, 0.0, 0.0};
+	glm::vec3 ray_direction{0.0, 0.0, 1};
+	Ray ray {ray_origin,ray_direction};
+	float distance =0.0;
+	REQUIRE(box.intersect(ray, distance)==true);
+}
+
+
+
+
+
+
+
+
+
 
 
 
