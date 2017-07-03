@@ -7,7 +7,8 @@
 #include "shape.hpp"
 #include "material.hpp"
 #include <string>
-
+#include <fstream> 
+#include <iostream>   
 Material testmat(std::string {"testmaterial"}, Color{0.0,0.0,0.0}, Color{1.0,1.0,1.0}, Color{0.5,0.5,0.5}, 0.5);
 
 
@@ -117,7 +118,7 @@ TEST_CASE("box area and volume", "[boxformula]")
   REQUIRE(box.volume() == 64.0);
   REQUIRE(box.area() == 96.0);
 }
-TEST_CASE("sphere area and volume", "[boxformula]")
+TEST_CASE("sphere area and volume", "[sphereformula]")
 {
 Sphere sphere ("mysphere",testmat,glm::vec3{3.0,3.0,3.0},5);
 REQUIRE(sphere.area() == 314.0);
@@ -127,6 +128,7 @@ TEST_CASE("print figures", "[print]")
 {
   Box box;
   Sphere sphere;
+  std::cout<<"\n Print Figures:\n";
   box.print(std::cout);
   sphere.print(std::cout);
 }
@@ -176,8 +178,56 @@ TEST_CASE("intersectRayBox", "[intersect]")
 	float distance =0.0;
 	REQUIRE(box.intersect(ray, distance)==true);
 }
+TEST_CASE("LoadMat", "[LoaderMat]")
+{
+    //define material red  1 0 0 1 0 0 1 0 0 1
+    //define material blue 0 0 1 0 0 1 0 0 1 1
+   std::cout<<"\n Print Loaded:\n";
+    std::string line;
+    std::ifstream file ("scene_material.txt");
+     if(file.is_open()){
+
+      while(std::getline(file,line)){
+        std::stringstream ss;
+        std::string keyword;
+
+        ss<<line;
+        ss>>keyword;
+
+        if(keyword == "define"){
+          ss<<line;
+          ss>>keyword;
+
+          if(keyword == "material"){
+
+            Color mat_get_ka{0,0,0};
+            Color mat_get_kd{0,0,0};
+            Color mat_get_ks{0,0,0};
+            std::string mat_get_name;
+            float mat_get_m;
+            ss>>mat_get_name;
+
+            ss>> mat_get_ka.r;
+            ss>> mat_get_ka.g;
+            ss>> mat_get_ka.b;
+            ss>> mat_get_kd.r;
+            ss>> mat_get_kd.g;
+            ss>> mat_get_kd.b;
+            ss>> mat_get_ks.r;
+            ss>> mat_get_ks.g;
+            ss>> mat_get_ks.b;
+            ss>> mat_get_m;
+            Material loadmat(mat_get_name,mat_get_ka,mat_get_kd,mat_get_ks, mat_get_m);
+            Box box ("mybox",loadmat,glm::vec3{1.0,1.0,1.0},glm::vec3{2.0,2.0,2.0});
+            box.print(std::cout);
+
+                                    }
+                                } 
+                                      }
+                           }
 
 
+}
 
 
 
